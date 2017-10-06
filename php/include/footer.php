@@ -34,5 +34,6 @@
 <!--//scrolling js-->
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.js"> </script>
+<script src="js/dropzone.js"> </script>
 </body>
 </html>
