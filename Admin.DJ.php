@@ -28,7 +28,16 @@ $i = 0;
                         <td><?php echo $dj['fullname'] ?></td>
                         <td><?php echo $dj['email'] ?></td>
                         <td><?php echo $dj['gender'] ?></td>
-                        <td>No</td>
+                        <?php
+                        $c = $db->prepare('SELECT COUNT(*) AS c FROM equipments WHERE dj = ?');
+                        $c->execute(array($dj['id']));
+                        $_c = $c->fetch();
+                         ?>
+                        <td>
+                            <a href="viewDJEq.php?id=<?php echo $dj['id'] ?>">
+                                <?php echo $_c['c'] ?>
+                            </a>
+                        </td>
                         <td><div class="mail-right">
                             <div class="dropdown">
                                 <a href="#"  data-toggle="dropdown" aria-expanded="false">
