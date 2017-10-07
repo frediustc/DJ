@@ -1,34 +1,41 @@
 
 <?php include 'php/include/head.php';
-$djs = $db->prepare('SELECT * FROM users WHERE usertype = 2 ORDER BY fullname');
-$djs->execute();
+$eqs = $db->prepare('SELECT equipments.*, users.fullname, users.id AS uid
+    FROM equipments
+    INNER JOIN users ON users.id = equipments.dj
+    ORDER BY creation DESC');
+$eqs->execute();
 $i = 0;
 ?>
 
 <div class="main-page">
-    <p><a href="Admin.Equipment.Add.php" class="btn btn-primary btn-lg">Add Equipements</a></p>
+    <p><a href="Admin.Equipment.Add.php" class="btn btn-primary btn-lg">Add Equipments</a></p>
     <div class="tables">
         <div class="bs-example widget-shadow" data-example-id="hoverable-table">
             <h4>DJ lists</h4>
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Full Name</th>
-                        <th>Email</th>
-                        <th>gender</th>
-                        <th>Equiped</th>
-                        <th>opt</th>
+                        <th>Previous</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>DJ</th>
+                        <th>Opt.</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($dj = $djs->fetch()) { $i++; ?>
+                    <?php while ($eq = $eqs->fetch()) { $i++; ?>
                     <tr>
-                        <th scope="row"><?php echo $i ?></th>
-                        <td><?php echo $dj['fullname'] ?></td>
-                        <td><?php echo $dj['email'] ?></td>
-                        <td><?php echo $dj['gender'] ?></td>
-                        <td>No</td>
+                        <th scope="row"><img src="images/equip/eq_<?php echo $eq['id'] ?>.jpg" alt="prev Image" class="prevImg"></th>
+                        <td><?php echo $eq['name'] ?></td>
+                        <td><?php echo $eq['description'] ?></td>
+                        <td><?php echo $eq['price'] ?></td>
+                        <td>
+                            <a href="viewDJ.php?id=<?php echo $eq['uid'] ?>">
+                                <?php echo $eq['fullname'] ?>
+                            </a>
+                        </td>
                         <td><div class="mail-right">
                             <div class="dropdown">
                                 <a href="#"  data-toggle="dropdown" aria-expanded="false">
@@ -36,19 +43,19 @@ $i = 0;
                                 </a>
                                 <ul class="dropdown-menu float-left">
                                     <li>
-                                        <a href="viewDJ.php?id=<?php echo $dj['id'] ?>">
+                                        <a href="viewEq.php?id=<?php echo $eq['id'] ?>">
                                             <i class="fa fa-reply mail-icon"></i>
                                             View
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="editDJ.php?id=<?php echo $dj['id'] ?>" title="">
+                                        <a href="editEq.php?id=<?php echo $eq['id'] ?>" title="">
                                             <i class="fa fa-download mail-icon"></i>
                                             Edit
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="deleteDJ.php?id=<?php echo $dj['id'] ?>" class="font-red" title="">
+                                        <a href="deleteEq.php?id=<?php echo $eq['id'] ?>" class="font-red" title="">
                                             <i class="fa fa-trash-o mail-icon"></i>
                                             Delete
                                         </a>

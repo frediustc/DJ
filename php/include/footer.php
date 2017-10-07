@@ -35,5 +35,29 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.js"> </script>
 <script src="js/dropzone.js"> </script>
+<script type="text/javascript">
+Dropzone.options.dz = {
+    paramName: "file", // The name that will be used to transfer the file
+    maxFilesize: 2, // MB
+    acceptedFiles: '.jpg',
+    init: function() {
+        this.on("addedfile", function(file) { alert("Added file."); });
+    },
+    renameFile : function(file){
+        var fn = file.name,
+            sfn = fn.split('.'),
+            ext = sfn[sfn.length - 1],
+            ts = Date.now();
+            file.name = ts + ext;
+        console.log(fn, sfn, ext, ts, file.name);
+    },
+    accept: function(file, done) {
+    if (file.name == "avequipmentrentalsdallas.jpg") {
+      done("Naha, you don't.");
+    }
+    else { done(); }
+    }
+};
+</script>
 </body>
 </html>

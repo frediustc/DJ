@@ -1,17 +1,15 @@
 
 <?php include 'php/include/head.php' ?>
-<?php include 'php/script/equipement.php' ?>
-
+<?php include 'php/script/equipment.php' ?>
 <div class="main-page">
     <p><a href="Admin.Equipments.php" class="btn btn-primary btn-lg">View Equipment List</a></p>
     <div class="forms">
-        <?php if ($step1): ?>
             <div class="form-grids row widget-shadow" data-example-id="basic-forms">
                 <div class="form-title">
                     <h4>Add New Equipment (step 1):</h4>
                 </div>
                 <div class="form-body">
-                    <form method="post" action="Admin.equipment.Add.php">
+                    <form method="post" action="Admin.equipment.Add.php" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>name</label>
                             <input type="text" class="form-control" required name="name">
@@ -35,23 +33,14 @@
                             <?php } ?>
                             </select>
                         </div>
-                        <button type="submit" name="step1" class="btn btn-default">next</button>
+                        <div class="form-group">
+                            <label>picture</label>
+                            <input type="file" class="form-control" required name="pic">
+                        </div>
+                        <button type="submit" name="step1" class="btn btn-default">Add Equipment</button>
                     </form>
                 </div>
             </div>
-        <?php endif; ?>
-        <?php if ($step2): ?>
-            <div class="form-grids row widget-shadow" data-example-id="basic-forms">
-                <div class="form-title">
-                    <h4>Add New Equipment (step 2):</h4>
-                </div>
-                <div class="form-body">
-                    <form method="post" action="Admin.equipment.Add.php" class="dropzone" enctype="multipart/form-data">
-
-                    </form>
-                </div>
-            </div>
-        <?php endif; ?>
     </div>
 </div>
 
