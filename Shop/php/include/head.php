@@ -16,6 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<!-- Bootstrap Core CSS -->
 		<link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<link href="../css/jquery-ui.min.css" rel='stylesheet' type='text/css' />
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -24,7 +25,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 		<!----//webfonts---->
 		<!----start-alert-scroller---->
-		<script src="js/jquery.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/jquery-ui.js"></script>
 		<script type="text/javascript" src="js/jquery.easy-ticker.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function(){
@@ -41,7 +43,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- //End menu -->
 		<!---slider---->
 		<link rel="stylesheet" href="css/slippry.css">
-		<script src="js/jquery-ui.js" type="text/javascript"></script>
 		<script src="js/scripts-f0e4e0c2.js" type="text/javascript"></script>
 		<script>
 			  jQuery('#jquery-demo').slippry({
@@ -55,8 +56,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			});
 		</script>
 		<!----start-pricerage-seletion---->
-		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 		<script type='text/javascript'>//<![CDATA[
 			$(window).load(function(){
 			 $( "#slider-range" ).slider({
