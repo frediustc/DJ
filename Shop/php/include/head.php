@@ -9,6 +9,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 	<head>
 		<title>Spike shoes Website Template | Home :: w3layouts</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Novus Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+		SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!-- Bootstrap Core CSS -->
+		<link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -102,10 +109,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="clear"> </div>
 						</div>
 						<div class="top-header-right">
-							<ul>
-								<li><a href="login.php">Login</a><span> </span></li>
-								<li><a href="register.php">Join</a></li>
-							</ul>
+							<?php if (!isset($_SESSION['id'])): ?>
+								<ul>
+									<li><a href="login.php">Login</a><span> </span></li>
+									<li><a href="register.php">Join</a></li>
+								</ul>
+							<?php endif; ?>
+							<?php if (isset($_SESSION['id'])): ?>
+								<ul>
+									<li><a href="history.php"><?php echo $_SESSION['f'] ?></a><span> </span></li>
+									<li><a href="../logout.php">LogOut</a></li>
+								</ul>
+							<?php endif; ?>
+
 						</div>
 						<div class="clear"> </div>
 					</div>

@@ -47,20 +47,20 @@ body{
 }
 .top-header-left{
 	float:left;
-	width:20%;
+	width:18%;
 	padding: 0.25em 0;
 	color: white;
 	font-weight: bold;
 }
 .top-header-center{
 	float: left;
-	width: 60%;
+	width: 50%;
 	padding: 0.4em 0;
 }
 .top-header-right{
 	float: right;
 	padding: 0.25em 0;
-	width: 20%;
+	width: 32%;
 	text-align: right;
 }
 /*----start-cart-tonggle----*/
@@ -2673,7 +2673,7 @@ span.mail a:hover{
 		width: 19%;
 	}
 	.top-header-center-alert-right {
-		width: 60%;
+		width: 50%;
 		height: 20px;
 		overflow: hidden;
 		float: left;
@@ -2776,4 +2776,12 @@ span.mail a:hover{
 	.product-pic p {
 		padding: 0 1em 1em 1em;
 	}
+}
+
+input:not([type="submit"]), select{
+	border: 1px solid #EEE;
+	outline-color: #E45D5D;
+	width: 96%;
+	font-size: 1em;
+	padding: 0.5em;
 }

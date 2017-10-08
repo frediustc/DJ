@@ -58,7 +58,7 @@ $prod->execute();
 <div class="content-right">
     <div class="product-grids">
         <?php while ($p = $prod->fetch()) { ?>
-        <div class="product-grid fade">
+        <div class="product-grid ">
             <div class="product-grid-head">
                 <p><?php echo strtoupper($p['name']) ?></p>
             </div>
