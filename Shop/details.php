@@ -178,7 +178,6 @@ $p = $prod->fetch();
                                 <label for="">End Date</label>
                                 <input type="text" name="ed" value="" id="to" required class="form-control">
                             </div>
-
                             <div class="orderMsg">
                                 <div class="alert alert-danger " role="alert">
                                     <p></p>
@@ -315,30 +314,35 @@ $p = $prod->fetch();
                         <thead>
                             <tr>
                               <th>#</th>
-                              <th>First Name</th>
-                              <th>Last Name</th>
-                              <th>Username</th>
+                              <th>Client</th>
+                              <th>DJ</th>
+                              <th>Start day</th>
+                              <th>End day</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">3</th>
-                              <td>Larry</td>
-                              <td>the Bird</td>
-                              <td>@twitter</td>
-                            </tr>
+                            <?php
+                            $orders = $db->prepare('SELECT orders.sd, orders.ed, users.fullname, orders.pid
+                                FROM orders
+                                INNER JOIN users ON users.id = orders.uid
+                                WHERE pid = ? LIMIT 5');
+                            $orders->execute(array($_GET['id']));
+                            while ($o = $orders->fetch()) {
+                                $dj = $db->prepare('SELECT users.fullname
+                                     FROM equipments
+                                     INNER JOIN users ON users.id = equipments.dj
+                                     WHERE equipments.id = ?');
+                                $dj->execute(array($o['pid']));
+                                $d = $dj->fetch();
+                                ?>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td><?php echo $o['fullname'] ?></td>
+                                  <td><?php echo $d['fullname'] ?></td>
+                                  <td><?php echo $o['sd'] ?></td>
+                                  <td><?php echo $o['ed'] ?></td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
