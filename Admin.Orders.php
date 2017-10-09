@@ -129,7 +129,7 @@
         <?php } $orders->closeCursor(); ?>
     </div>
     <div class="inbox-page row">
-        <h4>Denied Orders</h4>
+        <h4>Declined Orders</h4>
         <?php
         $orders = $db->prepare('
             SELECT DISTINCT orders.sd, orders.id, orders.ed, orders.duration, users.fullname, orders.pid, equipments.name, equipments.description, equipments.price
