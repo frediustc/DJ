@@ -6,7 +6,7 @@
         <h4>Pending Orders</h4>
         <?php
         $orders = $db->prepare('
-            SELECT DISTINCT orders.sd, orders.id, orders.ed, orders.duration, users.fullname, orders.pid, equipments.name, equipments.description, equipments.price
+            SELECT orders.sd, orders.id, orders.ed, orders.duration, users.fullname, orders.pid, equipments.name, equipments.description, equipments.price
             FROM orders
             INNER JOIN users ON users.id = orders.uid
             INNER JOIN equipments ON equipments.id = orders.pid
@@ -72,7 +72,7 @@
         <h4>Accepted Orders</h4>
         <?php
         $orders = $db->prepare('
-            SELECT DISTINCT orders.sd, orders.id, orders.ed, orders.duration, users.fullname, orders.pid, equipments.name, equipments.description, equipments.price
+            SELECT orders.sd, orders.id, orders.ed, orders.duration, users.fullname, orders.pid, equipments.name, equipments.description, equipments.price
             FROM orders
             INNER JOIN users ON users.id = orders.uid
             INNER JOIN equipments ON equipments.id = orders.pid
@@ -132,7 +132,7 @@
         <h4>Declined Orders</h4>
         <?php
         $orders = $db->prepare('
-            SELECT DISTINCT orders.sd, orders.id, orders.ed, orders.duration, users.fullname, orders.pid, equipments.name, equipments.description, equipments.price
+            SELECT orders.sd, orders.id, orders.ed, orders.duration, users.fullname, orders.pid, equipments.name, equipments.description, equipments.price
             FROM orders
             INNER JOIN users ON users.id = orders.uid
             INNER JOIN equipments ON equipments.id = orders.pid

@@ -38,18 +38,6 @@ $i = 0;
                                             View
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="editCl.php?id=<?php echo $dj['id'] ?>" title="">
-                                            <i class="fa fa-download mail-icon"></i>
-                                            Edit
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="deleteCl.php?id=<?php echo $dj['id'] ?>" class="font-red" title="">
-                                            <i class="fa fa-trash-o mail-icon"></i>
-                                            Delete
-                                        </a>
-                                    </li>
                                 </ul>
                             </div>
                         </div></td>

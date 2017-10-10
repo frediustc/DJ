@@ -53,6 +53,45 @@ if(isset($_POST['insDJ'])){
         }
     }
 }
+if(isset($_POST['updateDJ'])){
+
+    $correct = true;
+
+    $fn = htmlspecialchars(trim($_POST['fn']));
+    $em = strtolower(htmlspecialchars(trim($_POST['em'])));
+
+    //check if the Full Name format is correct (letter within 2 and 5 char)
+    if(!preg_match('/^[a-zA-Z ]{5,100}$/', $fn)) {
+        $correct = false;
+        echo '<div class="alert alert-danger" role="alert"><strong>Full Name Wrong Format!</strong> 5 - 100 letters & spaces only</div>';
+    }
+
+    //check if the email format is correct (letter within 2 and 5 char)
+    if(!preg_match('/(^[a-zA-Z0-9_.+-]+)@([a-zA-Z_-]+).([a-zA-Z]){2,4}$/', $em)) {
+        $correct = false;
+        echo '<div class="alert alert-danger" role="alert"><strong>Email Wrong Format!</strong> must be in example@domain.extension format</div>';
+    }
+
+    //check if the email does not exist
+    $check = $db->prepare('SELECT COUNT(*) AS nbr FROM users WHERE email = ? AND id != ?');
+    $check->execute(array($em, $_GET['id']));
+    $result = $check->fetch();
+    if($result['nbr'] > 0){
+        $correct = false;
+        echo '<div class="alert alert-danger" role="alert"><strong>Error</strong> Email already exist</div>';
+    }
+
+    //if all is alright ($correct === true) we insert the value
+    if($correct){
+        $stdadd = $db->prepare('UPDATE users SET fullname = ?, email = ?, gender = ? WHERE id = ?)');
+        if($stdadd->execute(array(ucwords($fn), $em, $_POST['gd'], $_GET['id']))){
+            echo '<div class="alert alert-success" role="alert"><strong>Success</strong> DJ Details updated!</div>';
+        }
+        else {
+            echo '<div class="alert alert-danger" role="alert"><strong>Error</strong> Something went wrong</div>';
+        }
+    }
+}
 
 if(isset($_POST['reg'])){
 
