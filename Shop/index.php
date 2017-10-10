@@ -1,8 +1,6 @@
 <?php include 'php/include/head.php' ?>
 
 <?php
-$banner = $db->prepare('SELECT * FROM equipments ORDER BY id DESC LIMIT 3');
-$banner->execute();
 
 $prod = $db->prepare('SELECT equipments.*, users.fullname, users.id AS uid
     FROM equipments
@@ -10,27 +8,7 @@ $prod = $db->prepare('SELECT equipments.*, users.fullname, users.id AS uid
     ORDER BY id DESC');
 $prod->execute();
  ?>
-<!----start-image-slider---->
-<div class="img-slider">
-    <div class="wrap">
-        <ul id="jquery-demo">
-            <?php while ($b = $banner->fetch()) { ?>
-                <li>
-                    <a href="#slide1" class="slider-img">
-                        <img src="../images/equip/eq_<?php echo $b['id'] ?>.jpg" alt="" />
-                    </a>
-                    <div class="slider-detils">
-                        <h3><?php echo $b['name'] ?></h3>
-                        <span><?php echo $b['description'] ?></span>
-                        <a class="slide-btn" href="details.html"> Shop Now</a>
-                    </div>
-                </li>
-            <?php } ?>
-        </ul>
-    </div>
-</div>
-<div class="clear"> </div>
-<!----//End-image-slider---->
+
 <!--- start-content---->
 <div class="content">
 <div class="wrap">

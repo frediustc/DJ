@@ -7,7 +7,7 @@
         <!--logo -->
         <div class="logo">
             <a href="index.html">
-                <h1>DJMS</h1>
+                <h1>Micash Records</h1>
                 <span>AdminPanel</span>
             </a>
         </div>

@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Spike shoes Website Template | Home :: w3layouts</title>
+		<title>Micash Records</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="Novus Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -91,7 +91,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="top-header">
 					<div class="wrap">
 						<div class="top-header-left">
-							<p>Micash Records</p>
+							<p><a href="Index.php">Micash Records</a></p>
 							<div class="clear"> </div>
 						</div>
 						<div class="top-header-center">
@@ -116,7 +116,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<?php endif; ?>
 							<?php if (isset($_SESSION['id'])): ?>
 								<ul>
-									<li><a href="history.php"><?php echo $_SESSION['f'] ?></a><span> </span></li>
+									<li><a href="account.php"><?php echo $_SESSION['f'] ?></a><span> </span></li>
 									<li><a href="../logout.php">LogOut</a></li>
 								</ul>
 							<?php endif; ?>
