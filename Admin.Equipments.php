@@ -49,13 +49,13 @@ $i = 0;
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="editEq.php?id=<?php echo $eq['id'] ?>" title="">
+                                        <a href="Admin.Equipment.Edit.php?id=<?php echo $eq['id'] ?>" title="">
                                             <i class="fa fa-download mail-icon"></i>
                                             Edit
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="deleteEq.php?id=<?php echo $eq['id'] ?>" class="font-red" title="">
+                                        <a href="php/script/deleteEquipement.php?id=<?php echo $eq['id'] ?>" class="font-red" title="">
                                             <i class="fa fa-trash-o mail-icon"></i>
                                             Delete
                                         </a>

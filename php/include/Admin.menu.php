@@ -1,7 +1,7 @@
 <?php $count = $db->prepare('SELECT
 (SELECT COUNT(id) FROM users WHERE usertype = 1) AS cc,
 (SELECT COUNT(id) FROM users WHERE usertype = 2) AS cd,
-(SELECT COUNT(id) FROM equipments) AS ce,
+(SELECT COUNT(equipments.id) FROM equipments INNER JOIN users ON users.id = equipments.dj) AS ce,
 (SELECT COUNT(id) FROM orders) AS co
 ');
 $count->execute();

@@ -80,11 +80,10 @@ if(isset($_POST['updateDJ'])){
         $correct = false;
         echo '<div class="alert alert-danger" role="alert"><strong>Error</strong> Email already exist</div>';
     }
-
     //if all is alright ($correct === true) we insert the value
     if($correct){
-        $stdadd = $db->prepare('UPDATE users SET fullname = ?, email = ?, gender = ? WHERE id = ?)');
-        if($stdadd->execute(array(ucwords($fn), $em, $_POST['gd'], $_GET['id']))){
+        $upd = $db->prepare('UPDATE users SET fullname = ?, email = ?, gender = ? WHERE id = ?');
+        if($upd->execute(array(ucwords($fn), $em, $_POST['gd'], $_GET['id']))){
             echo '<div class="alert alert-success" role="alert"><strong>Success</strong> DJ Details updated!</div>';
         }
         else {

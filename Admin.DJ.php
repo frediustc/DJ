@@ -34,11 +34,7 @@ $i = 0;
                         $c->execute(array($dj['id']));
                         $_c = $c->fetch();
                          ?>
-                        <td>
-                            <a href="viewDJEq.php?id=<?php echo $dj['id'] ?>">
-                                <?php echo $_c['c'] ?>
-                            </a>
-                        </td>
+                        <td><?php echo $_c['c'] ?></td>
                         <td><div class="mail-right">
                             <div class="dropdown">
                                 <a href="#"  data-toggle="dropdown" aria-expanded="false">
@@ -58,7 +54,7 @@ $i = 0;
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="deleteDJ.php?id=<?php echo $dj['id'] ?>" class="font-red" title="">
+                                        <a href="php/script/deleteDJ.php?id=<?php echo $dj['id'] ?>" class="font-red" title="">
                                             <i class="fa fa-trash-o mail-icon"></i>
                                             Delete
                                         </a>
