@@ -2,39 +2,6 @@
 <?php include 'php/include/head.php' ?>
 
 <div class="main-page">
-    <div class="row-one">
-        <div class="col-md-4 widget">
-            <div class="stats-left ">
-                <h5>Total</h5>
-                <h4>Clients</h4>
-            </div>
-            <div class="stats-right">
-                <label><?php echo $c['cc'] ?></label>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="col-md-4 widget states-mdl">
-            <div class="stats-left">
-                <h5>Total</h5>
-                <h4>DJ</h4>
-            </div>
-            <div class="stats-right">
-                <label><?php echo $c['cd'] ?></label>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="col-md-4 widget states-last">
-            <div class="stats-left">
-                <h5>Total</h5>
-                <h4>Orders</h4>
-            </div>
-            <div class="stats-right">
-                <label><?php echo $c['co'] ?></label>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
     <!-- <div class="charts">
         <div class="col-md-4 charts-grids widget">
             <h4 class="title">Bar Chart Example</h4>

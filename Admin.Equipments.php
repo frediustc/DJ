@@ -12,7 +12,7 @@ $i = 0;
     <p><a href="Admin.Equipment.Add.php" class="btn btn-primary btn-lg">Add Equipments</a></p>
     <div class="tables">
         <div class="bs-example widget-shadow" data-example-id="hoverable-table">
-            <h4>DJ lists</h4>
+            <h4>Equipments lists</h4>
             <table class="table table-hover">
                 <thead>
                     <tr>
