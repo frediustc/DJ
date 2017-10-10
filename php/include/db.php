@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!isset($_SESSION['id'])){
+    session_start();
+}
 try {
     $db = new PDO('mysql:host=localhost;dbname=dj', 'root', '');
 } catch (Exception $e) {

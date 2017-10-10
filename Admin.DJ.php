@@ -1,4 +1,4 @@
-
+<?php include 'php/include/checkAdmin.php'; ?>
 <?php include 'php/include/head.php';
 $djs = $db->prepare('SELECT * FROM users WHERE usertype = 2 ORDER BY fullname');
 $djs->execute();

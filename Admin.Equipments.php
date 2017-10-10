@@ -1,4 +1,4 @@
-
+<?php include 'php/include/checkAdmin.php'; ?>
 <?php include 'php/include/head.php';
 $eqs = $db->prepare('SELECT equipments.*, users.fullname, users.id AS uid
     FROM equipments

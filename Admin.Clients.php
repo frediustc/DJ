@@ -1,5 +1,7 @@
 
-<?php include 'php/include/head.php';
+<?php
+include 'php/include/checkAdmin.php';
+include 'php/include/head.php';
 $djs = $db->prepare('SELECT * FROM users WHERE usertype = 1 ORDER BY fullname');
 $djs->execute();
 $i = 0;

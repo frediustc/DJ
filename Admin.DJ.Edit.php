@@ -1,4 +1,4 @@
-
+<?php include 'php/include/checkAdmin.php'; ?>
 <?php include 'php/include/head.php' ?>
 <?php include 'php/script/UserReg.php' ?>
 <?php

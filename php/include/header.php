@@ -32,8 +32,9 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <div class="profile_img">
                             <div class="user-name">
-                                <p>Wikolia</p>
-                                <span>Administrator</span>
+                                <p><?php echo $_SESSION['f'] ?></p>
+                                <?php $type = array('Client', 'DJ', 'Administrator') ?>
+                                <span><?php echo $type[$_SESSION['u'] - 1] ?></span>
                             </div>
                             <i class="fa fa-angle-down lnr"></i>
                             <i class="fa fa-angle-up lnr"></i>
@@ -42,7 +43,7 @@
                     </a>
                     <ul class="dropdown-menu drp-mnu">
                         <li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>
-                        <li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                        <li> <a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
                     </ul>
                 </li>
             </ul>

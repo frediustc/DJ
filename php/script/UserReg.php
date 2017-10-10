@@ -169,6 +169,9 @@ if(isset($_POST['log'])){
             case 1:
                 header('location: ../../Shop/Index.php');
                 break;
+            case 2:
+                header('location: ../../DJ.Dashboard.php');
+                break;
             case 3:
                 header('location: ../../Admin.Dashboard.php');
                 break;
