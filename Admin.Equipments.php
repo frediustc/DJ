@@ -31,23 +31,13 @@ $i = 0;
                         <td><?php echo $eq['name'] ?></td>
                         <td><?php echo $eq['description'] ?></td>
                         <td><?php echo $eq['price'] ?></td>
-                        <td>
-                            <a href="viewDJ.php?id=<?php echo $eq['uid'] ?>">
-                                <?php echo $eq['fullname'] ?>
-                            </a>
-                        </td>
+                        <td><?php echo $eq['fullname'] ?></td>
                         <td><div class="mail-right">
                             <div class="dropdown">
                                 <a href="#"  data-toggle="dropdown" aria-expanded="false">
                                     <p><i class="fa fa-ellipsis-v mail-icon"></i></p>
                                 </a>
                                 <ul class="dropdown-menu float-left">
-                                    <li>
-                                        <a href="viewEq.php?id=<?php echo $eq['id'] ?>">
-                                            <i class="fa fa-reply mail-icon"></i>
-                                            View
-                                        </a>
-                                    </li>
                                     <li>
                                         <a href="Admin.Equipment.Edit.php?id=<?php echo $eq['id'] ?>" title="">
                                             <i class="fa fa-download mail-icon"></i>

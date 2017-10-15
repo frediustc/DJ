@@ -42,12 +42,6 @@ $i = 0;
                                 </a>
                                 <ul class="dropdown-menu float-left">
                                     <li>
-                                        <a href="view.DJ.php?id=<?php echo $dj['id'] ?>">
-                                            <i class="fa fa-reply mail-icon"></i>
-                                            View
-                                        </a>
-                                    </li>
-                                    <li>
                                         <a href="Admin.DJ.Edit.php?id=<?php echo $dj['id'] ?>" title="">
                                             <i class="fa fa-download mail-icon"></i>
                                             Edit

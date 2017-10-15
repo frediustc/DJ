@@ -18,7 +18,6 @@ $i = 0;
                         <th>Full Name</th>
                         <th>Email</th>
                         <th>gender</th>
-                        <th>opt</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,21 +27,6 @@ $i = 0;
                         <td><?php echo $dj['fullname'] ?></td>
                         <td><?php echo $dj['email'] ?></td>
                         <td><?php echo $dj['gender'] ?></td>
-                        <td><div class="mail-right">
-                            <div class="dropdown">
-                                <a href="#"  data-toggle="dropdown" aria-expanded="false">
-                                    <p><i class="fa fa-ellipsis-v mail-icon"></i></p>
-                                </a>
-                                <ul class="dropdown-menu float-left">
-                                    <li>
-                                        <a href="viewCl.php?id=<?php echo $dj['id'] ?>">
-                                            <i class="fa fa-reply mail-icon"></i>
-                                            View
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div></td>
                     </tr>
                     <?php } ?>
                 </tbody>
