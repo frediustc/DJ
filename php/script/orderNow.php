@@ -9,9 +9,10 @@ if(isset($_POST['orderitnow']))
     $sd = changedateformat(trim(htmlspecialchars($_POST['sd'])));
     $ed = changedateformat(trim(htmlspecialchars($_POST['ed'])));
     $du = trim(htmlspecialchars($_POST['du']));
+    $desc = trim(htmlspecialchars($_POST['desc']));
 
-    $i = $db->prepare('INSERT INTO orders(pid, uid, sd, ed, status, duration) VALUES(?, ?, ?, ?, "pending",?)');
-    if($i->execute(array($_GET['id'], $_SESSION['id'], $sd, $ed, $du)))
+    $i = $db->prepare('INSERT INTO orders(pid, uid, sd, ed, description, status, duration) VALUES(?, ?, ?, ?, ?, "pending",?)');
+    if($i->execute(array($_GET['id'], $_SESSION['id'], $sd, $ed, $desc, $du)))
     {
         echo '<p class="alert bg-success">Order successfully done</p>';
     }

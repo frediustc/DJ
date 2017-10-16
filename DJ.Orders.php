@@ -6,7 +6,7 @@
         <h4>Orders</h4>
         <?php
         $orders = $db->prepare('
-            SELECT orders.sd, orders.id, orders.ed, orders.duration, users.fullname, orders.pid, equipments.name, equipments.description, equipments.price
+            SELECT orders.sd, orders.id, orders.ed, orders.duration, users.fullname, orders.pid, equipments.name, orders.description, equipments.price
             FROM orders
             INNER JOIN users ON users.id = orders.uid
             INNER JOIN equipments ON equipments.id = orders.pid

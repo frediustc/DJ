@@ -178,6 +178,10 @@ $p = $prod->fetch();
                                 <label for="">End Date</label>
                                 <input type="text" name="ed" value="" id="to" required class="form-control">
                             </div>
+                            <div class="form-group">
+                                <label for="">Description</label>
+                                <textarea name="desc" required class="form-control"></textarea>
+                            </div>
                             <div class="orderMsg">
                                 <div class="alert alert-danger " role="alert">
                                     <p></p>
